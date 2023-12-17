@@ -5,18 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class ShoppingCart extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'user_id';
+    protected $primaryKey = 'cart_id';
 
     protected $fillable = [
-        'user_username',
-        'user_password',
-        'user_full_name',
-        'user_phone_number',
-        'user_address',
+        'cart_quantity',
+        'cart_total_price',
+        'user_id',
+        'product_id',
         'created_at',
         'updated_at',
     ];

@@ -5,18 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class OrderDetail extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'user_id';
+    protected $primaryKey = 'order_detail_id';
 
     protected $fillable = [
-        'user_username',
-        'user_password',
-        'user_full_name',
-        'user_phone_number',
-        'user_address',
+        'order_id',
+        'product_id',
         'created_at',
         'updated_at',
     ];
