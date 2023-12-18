@@ -4,10 +4,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\RoleController;
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['prefix' => 'admin'], function () {
+    Route::group(['prefix' => 'role'], function () {
+        Route::post('get-all', [RoleController::class, 'getAllRole']);
+        Route::post('create', [RoleController::class, 'addRole']);
+        Route::post('update', [RoleController::class, 'editRole']);
+        Route::post('detail', [RoleController::class, 'getRoleDetail']);
+    });
 });
-
-Route::post('admin/role/get-all', [RoleController::class, 'getAll']);
-Route::post('admin/role/create', [RoleController::class, 'create']);
-Route::post('admin/role/update', [RoleController::class, 'update']);
