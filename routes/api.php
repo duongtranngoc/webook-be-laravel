@@ -8,6 +8,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('role/get-all', [RoleController::class, 'getAll']);
-Route::post('role/create', [RoleController::class, 'create']);
-Route::post('role/update', [RoleController::class, 'update']);
+Route::post('admin/role/get-all', [RoleController::class, 'getAll']);
+Route::post('admin/role/create', [RoleController::class, 'create']);
+Route::post('admin/role/update', [RoleController::class, 'update']);
